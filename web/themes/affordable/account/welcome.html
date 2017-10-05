@@ -1,0 +1,482 @@
+{template 'common/header-base'}
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>{php if(isset($title)) $_W['page']['title'] = $title}{if !empty($_W['page']['title'])}{$_W['page']['title']} - {/if}{if empty($_W['page']['copyright']['sitename'])}{if IMS_FAMILY != 'x'}{/if}{else}{$_W['page']['copyright']['sitename']}{/if}</title>
+<meta name="keywords" content="{if empty($_W['page']['copyright']['keywords'])}{if IMS_FAMILY != 'x'}{/if}{else}{$_W['page']['copyright']['keywords']}{/if}" />
+<meta name="description" content="{if empty($_W['page']['copyright']['description'])}{if IMS_FAMILY != 'x'}{/if}{else}{$_W['page']['copyright']['description']}{/if}" />
+    <link rel="stylesheet" type="text/css" href="./resource/affordable/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./resource/affordable/css/com.css" />
+    <script type="text/javascript" src="./resource/affordable/js/jquery-1.8.3.min.js"></script>	
+	<script type="text/javascript" src="./resource/affordable/js/jquery.cookie.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/aspx; charset=utf-8">
+	<script src="./resource/affordable/js/trackevent.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".u-promjs").click(function (event) {
+                $(".prom-adv").animate({ top: "135%", left: "125%" }, 1000)
+                $(".prom-adv img").animate({ width: 0, height: 0 }, 1000)
+                $(".u-mask").animate({ opacity: 0 }, 2000, function () {
+                    $(".u-mask").hide();
+                })
+                $(".wei-nav").animate({ opacity: 1 }, 2000)
+            });
+        })
+    </script>
+</head>
+<body>
+	<style>
+	
+	 #head{
+	width:100%;
+	position:absolute;
+	top:0px;
+	z-index:99;}
+
+ #head .top{
+	background:#FFF url("img/top_bg1.gif") repeat-x center 25px;
+	width:100%;
+	height:80px;
+	font-size:12px;
+	border-bottom:1px solid #cbcaca;}	
+ .TopBG{
+	 width:100%;
+	background:#FFF}
+ .TopInfo{
+	margin:auto;
+	width:1080px;
+	height:35px;
+	} 
+ .TopInfo .link{
+	background:#FFF url("img/link_bg1.gif") no-repeat center -5px;
+	text-align:center;
+	line-height:25px;
+	width:227px;
+	height:35px;
+	float:right;
+	color:#333;
+	padding-right:20px;
+	padding-left:10px;
+	font-size:11px;}
+ .TopInfo .link a{
+	color:#333;}	
+ .TopInfo .link a:hover{
+	color:#ccc;}	
+ #head .top .TopLogo{
+	margin:auto;
+	width:1080px;
+	padding-top:0px;
+	}
+ #head .top .TopLogo .logo{
+	float:left;
+	height:30px;}
+
+
+ #head .top .TopLogo .tel{
+	float:left;
+	height:62px;
+	padding-top:10px;
+	} 
+	
+ #head .top .TopLogo .tel .telW{
+	padding-left:0px;
+	padding-top:10px;
+	color:#999;
+	
+	font-size:11px;
+	}	
+ #head .top .TopLogo .tel .telN{
+	padding-left:0px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:18px;
+	color:#FF8700;
+	line-height:100%;}
+
+/* navs*/
+ #head #NavLink{
+	width:790px;
+	height:38px;
+	margin:auto;
+	}
+ #head #NavLink .NavBG{
+	height:38px;
+	width:790px;
+	position:absolute;
+	z-index:100;}	
+		
+ #head #NavLink #sddm{
+	width:790px;
+	margin:auto;
+	z-index:30}
+
+ #head #NavLink #sddm li{
+	float: right;
+	font-weight:normal;}
+ #head #NavLink #sddm .CurrentLi a{
+	background:none;}	
+ #head #NavLink #sddm li a
+{	display: block;
+	width: 88px;
+	color: #666666;
+	text-align: center;
+	padding:0px 5px;
+	height:38px;
+	line-height:38px;
+	background:;
+	font-size:14px;
+	margin-top:8px;
+	}
+ #head #NavLink #sddm li P{
+	font-size:10px;
+	font-weight:normal;
+	color:#FFF;
+	text-transform:uppercase;}
+ #head #NavLink #sddm li a:hover
+{	text-decoration:none;
+	background:#FF8700;
+	color:#FFFFFF;
+}
+
+ #head #NavLink #sddm div
+{	position: absolute;
+	visibility: hidden;
+	background: #808080;
+	padding:0px 0px;
+	filter: alpha(opacity=85);
+	top:38px;
+	}
+
+ #head #NavLink #sddm div a
+	{	position: relative;
+		padding: 0px 5px;
+		width:120px;
+		text-align: center;
+		background:#FF8700;
+		color: #FFFFFF;
+		font-size:12px;
+		font-weight:normal;
+		text-decoration:none;
+		line-height:30px;
+		height:30px;
+		border-bottom:1px solid #FF9100;}
+
+ #head #NavLink #sddm div a:hover{
+	background:#287ec7;
+	color:#fff;
+	font-weight:bold;
+	line-height:30px;
+	border-bottom:1px solid #FF9100;}
+
+	
+	
+	
+	</style>
+	
+	
+	
+	
+        <!--head start-->
+        <div id="head" style="top: 0px; position: fixed;">
+            <div class="TopBG">
+                <div class="clearfix">
+                </div>
+            </div>
+            <!--top start -->
+            <div class="top">
+                <div class="TopLogo">
+                    <div class="logo">
+                        <a href="#">
+                            <img  style="height:100%;margin-top:15px;" src="{if !empty($_W['setting']['copyright']['flogo1'])}{php echo tomedia($_W['setting']['copyright']['flogo1'])}{else}../logo.png{/if}">
+                        </a>
+                    </div>
+                    <div class="tel">
+                        <!--nav start-->
+                        <div id="NavLink">
+                            <div class="NavBG">
+                                <!--Head Menu Start-->
+                                <ul id="sddm">
+                                    <li>
+                                        <a href="index.php?c=user&a=login&">
+                                            <font size="4px">登录</font>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="index.php?c=user&a=register">
+                                            <font size="4px">注册</font>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--Head Menu End-->
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                        <!--nav end-->
+                    </div>
+                </div>
+            </div>
+            <!--top end-->
+            <div class="clearfix">
+            </div>
+        </div>
+
+
+
+
+    <!--header End --> 
+    <div class="banner"  style="margin-top:60px;">
+        <div class="pic">
+            <ul>
+			
+			<li style="background: url(./resource/affordable/images/201602031749562570.png) #8cd0ab center 0 no-repeat;">
+                    <div class="pagebtn" style="margin-left: 0; top: 420px">
+					
+					 <span    class="btn-three"><a  style="background-color:#00B58A;"  target="_blank" <a href="{url 'user/login'}">立即登录</a></span>
+                        <span class="btn-four"><a target="_blank" <a href="{url 'user/register'}">会员注册</a></span>
+					
+                       </div>
+                </li>
+				
+				
+				<li style="background: url(./resource/affordable/images/201603091756301682.png) #5591c6 center 0 no-repeat;">
+                    <div class="pagebtn" style="margin-left: 0; top: 450px">
+                       <span class="btn-three"><a  style="background-color:#00B58A;"   target="_blank" <a href="{url 'user/login'}">立即登录</a></span>
+                        <span class="btn-four"><a target="_blank" <a href="{url 'user/register'}">会员注册</a></span>
+					   
+					</div>
+                </li>
+				
+				 <li style="background: url(./resource/affordable/images/201603141146383790.png) #f6a143 center 0 no-repeat;">
+                    <a href="#"></a>
+                    <div class="pagebtn" style="margin-left: -145px; top: 420px">
+                        <span class="btn-three"><a  style="background-color:#00B58A;"  target="_blank" <a href="{url 'user/login'}">立即登录</a></span>
+                        <span class="btn-four"><a target="_blank" <a href="{url 'user/register'}">会员注册</a></span>
+						</div>
+                </li>
+			
+			
+                 <li style="background: url(./resource/affordable/images/201701051009436024.png) #f6a143 center 0 no-repeat;">
+                     </a>
+                        <div class="pagebtn" style="margin-left: -646px; top: 420px">
+                       
+					   <span class="btn-three"><a  style="background-color:#00B58A;"  target="_blank" <a href="{url 'user/login'}">立即登录</a></span>
+                        <span class="btn-four"><a target="_blank" <a href="{url 'user/register'}">会员注册</a></span>
+					   
+                        </div>
+                </li>
+               
+                <li style="background: url(./resource/affordable/images/201602031749040011.png) #e6cd59 center 0 no-repeat;">
+                    <div class="pagebtn" style="margin-left: -180px; top: 220px">
+                       
+					   <span class="btn-three"><a  style="background-color:#00B58A;"   target="_blank" <a href="{url 'user/login'}">立即登录</a></span>
+                        <span class="btn-four"><a target="_blank" <a href="{url 'user/register'}">会员注册</a></span>
+					</div>
+                </li>
+                
+                
+            </ul>
+        </div>
+        <div class="spot">
+            <ul></ul>
+        </div>
+    </div>
+
+
+    <div class="pageall">
+        <div class="page1">
+            <div class="mauto">
+                <span>9亿微信用户 4亿移动支付 占据70%移动互联网流量<br />
+                    蕴藏的巨大的市场价值和商业机遇
+                </span>
+                <div class="pagebtn">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page3">
+            <div class="mauto">
+                <h2>你还在天天刷朋友圈（囤货）吗？</h2>
+                <p><strong>微信分销系统</strong>一块巨大财富蛋糕，一个庞大新兴市场带来滚滚红利，微商产业链已经形成。</p>
+                <p>但随之而来的问题，越来越多</p>
+                <div class="pagebtn">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page4">
+            <div class="page4-bg">
+                <div class="mauto">
+                    <h2>从此告别刷屏 囤货 无流量<br />
+                        微商赚钱另有门道</h2>
+                    <p><strong>微信分销系统</strong>时代在变，你不能再一成不变！是时候迎接新变革！</p>
+                    <h3 class="mt3">引领微商新时代</h3>
+                    <p>
+                        开微店，快速建立微信分销渠道，裂变式推<br />
+                        广引流，微信海帮你赚。
+                    </p>
+                    <div class="pagebtn">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page5">
+            <div class="mauto">
+                <h2>我们的解决方案</h2>
+                <p>
+                    移动微店分销利器，助你打造立体分销网络<br />
+                    把客户、好友和粉丝快速转化为分销商，引爆社交关系链，形成裂变式发展微店分销商，一店变<br />
+                    多店，最快速度拥有最广泛的社交分销渠道。
+                </p>
+                <div class="pagebtn">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page11">
+            <div class="mauto">
+                <h2>总部直管  分销商卖货无后顾之忧</h2>
+                <div class="pagebtn">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page18">
+            <div class="page18-bg">
+                <div class="mauto">
+                    <h2>{$_W['setting']['copyright']['person']} 的独特优势<br />
+                        移动电商整体解决方案专家</h2>
+                    <p>最灵活的合作方式：SAAS租用、私有部署、购买源码</p>
+                    <h3 class="mt4"><strong>微信分销系统</strong>引领微商新时代</h3>
+                    <div class="pagebtn">
+                        <ul>
+                            <li class="btn-three"><a target="_blank"<a class="qq" href="http://wpa.qq.com/msgrd?v=3&uin={$_W['setting']['copyright']['qq']}&site=qq&menu=yes">我想要租用</a></li>
+                            <li class="btn-four"><a target="_blank"<a class="qq" href="http://wpa.qq.com/msgrd?v=3&uin={$_W['setting']['copyright']['qq']}&site=qq&menu=yes">我想要私有部署</a></li>
+                            <li class="btn-three"><a target="_blank"<a class="qq" href="http://wpa.qq.com/msgrd?v=3&uin={$_W['setting']['copyright']['qq']}&site=qq&menu=yes">我想要独家源码</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page17">
+            <div class="page17-bg">
+                <div class="mauto">
+                    <h2 style="font-size: 36px;">{$_W['setting']['copyright']['person']} 微商商学院<br />
+                        免费 干货 专业的运营培训</h2>
+                    <p style="padding-top: 25px; color: #2d2d2d;">不断研发微商运营课程，服务客户，分享移动电商运营成功案列，教授运营技巧和方法。</p>
+                    <h3 style="padding-top: 15px;">你想要知道 这里应有尽有</h3>
+                    <div class="pagebtn">
+                        <ul>
+                            <li class="btn-three"><a target="_blank"<a href="{url 'user/register'}">申请试用</a></li>
+                            <li class="btn-four"><a target="_blank" <a class="qq" href="http://wpa.qq.com/msgrd?v=3&uin={$_W['setting']['copyright']['qq']}&site=qq&menu=yes">立即咨询</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page12">
+            <div class="mauto">
+                <h2 style="color: #fff;">{$_W['setting']['copyright']['person']} 引领微商新时代</h2>
+                <a  class="btn-ten" style="left: 155px; top: 485px;" title="微云微信分销系统">万客合一</a>
+                <a  class="btn-ten" style="left: 292px; top: 359px;" title="微云微信分销系统">全员分销</a>
+                <a  class="btn-ten" style="left: 467px; top: 230px;" title="微云微信分销系统">{$_W['setting']['copyright']['sitename']}</a>
+                <a  class="btn-ten" style="left: 645px; top: 359px;" title="微云微信分销系统">万店同源</a>
+                <a  class="btn-ten" style="left: 724px; top: 481px;" title="微云微信分销系统">终端倍增</a>
+            </div>
+        </div>
+
+        <div class="page13">
+            <div class="page13-bg">
+                <div class="page13-bg2">
+                    <div class="mauto">
+                        <h2>{$_W['setting']['copyright']['person']} 引领微商新时代</h2>
+                        <div class="pagebtn">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>                               
+      </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+    <!--footer Start -->
+    <div class="side-nav">
+        <div class="side-box">
+            <ul>
+                
+                <li class="trial"><a target="_blank" <a href="{url 'user/login'}">立即登录</a></li>
+                <li class="join"><a target="_blank" <a href="{url 'user/register'}">会员注册</a></li>
+               
+                <li class="code"><img class="qr-code-img" src="{if !empty($_W['setting']['copyright']['qrcode'])}{php echo tomedia($_W['setting']['copyright']['qrcode'])}{else}{/if}" width="125" height="125" />
+                <p>扫一扫立即体验</p>
+                </li>
+            </ul>  
+        </div>
+    </div>
+    <div class="gototop">
+        <div class="backtop"></div>
+    </div>
+    <script type="text/javascript" src="./resource/affordable/js/jquery.superslide.2.1.1.js"></script>
+    <script type="text/javascript" src="./resource/affordable/js/common.js"></script>
+
+	<div id="statcode" style="display:none;">
+	<!--baidu start-->
+    <script>
+	(function () {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?4b53049028918cae5da1dbefaeeb49b2";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+    <!--baidu end-->
+
+	<!--cnzz start-->
+    <script src="./resource/affordable/js/z_stat.js" language="JavaScript"></script>
+	<!--cnzz end-->
+	
+	<!--360 start-->
+	<script type="text/javascript" src="./resource/affordable/js/8275.js"></script>
+	<!--360 end-->
+
+<script type='text/javascript'>
+      var _vds = _vds || [];
+      window._vds = _vds;
+      (function(){
+        _vds.push(['setAccountId', 'a4dc7294de4088e6']);
+        (function() {
+          var vds = document.createElement('script');
+          vds.type='text/javascript';
+          vds.async = true;
+          vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(vds, s);
+        })();
+      })();
+  </script>
+	</div>
+    <!--footer End -->
+	<div class="center-block footer" role="footer">
+		<div class="text-center">
+			{if empty($copyright['footerright'])}{else}{$copyright['footerright']}{/if} &nbsp; &nbsp; {if !empty($copyright['statcode'])}{$copyright['statcode']}{/if}
+		</div>
+		<div class="text-center">
+			{if empty($copyright['footerleft'])}Powered by v{IMS_VERSION} &copy; 2014-2015 {else}{$copyright['footerleft']}{/if}
+		</div>
+		<div class="text-center">			
+		    {$_W['setting']['copyright']['icp']}
+		</div>
+	</div>
+</div>
+</body>
+</html>

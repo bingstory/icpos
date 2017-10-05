@@ -1,0 +1,22 @@
+﻿.alert-message{display: none; position: fixed; left: 50%;z-index:9999;margin-left: -200px;top: 100px;padding:1px; border-radius: 5px; line-height: 30px; color: #6D6C68;}
+.alert-message.error{background-color: #FAD7D1; border: 1px solid #FDA8A9; box-shadow: 0 0 3px #FDA8A9;}
+.alert-message.success{background-color: #D7F8C5; border: 1px solid #93DB6B; box-shadow: 0 0 3px #93DB6B;}
+.alert-message.warning{background-color: #D5F7C1; border: 1px solid #FDD56B;box-shadow: 0 0 3px #FDD56B;}
+
+.alert-message.default p{background-color: #CEF6B7; box-shadow: 0 0 3px #93DB6B;}
+.alert-message.warning p{background-color: #FFE9AD;box-shadow: 0 0 3px #FDD56B;}
+.alert-message p{padding-left: 50px;padding-right: 30px;}
+.alert-message.error p{background: url(../images/tishi.png) no-repeat 20px -21px #FACBC1;}
+.alert-message.success p{background: url(../images/tishi.png) no-repeat 20px -49px #CEF6B7;}
+.alert-message.warning p{background: url(../images/tishi.png) no-repeat 20px 6px #FFE9AD;}
+
+.popnews-mask{display: none; position: fixed;width: 100%;height: 100%;background-color: rgba(0,0,0,0.6);left: 0;top: 0;}
+.popnews-confirm{position: fixed;width: 500px;top: -100%; background-color: #fff;border: 1px solid #ccc;left: 50%;margin-left: -250px;border-radius: 6px;opacity: 0;}
+.popnews-confirm .popnews-confirm-h{height: 35px;background-color: #EFEFEF;border-top-left-radius: 6px;border-top-right-radius: 6px;border-bottom: 1px solid #e5e5e5;}
+.popnews-confirm .popnews-confirm-b{position: relative;padding: 15px 15px 15px 50px;}
+.popnews-confirm .popnews-confirm-b .confirm-b-in{display: table-cell; padding-left: 40px;background: url(../images/iconfont-tishi.png) no-repeat left top;height: 35px;vertical-align: middle;}
+.popnews-confirm .popnews-confirm-b .confirm-b-in h3{font-size: 18px;}
+.popnews-confirm .popnews-confirm-f{padding: 8px 15px;text-align: right;border-top: 1px solid #e5e5e5;}
+.popnews-confirm .popnews-confirm-f button{padding: 5px 10px;font-size: 12px;line-height: 1.5;border-radius: 3px;color: #fff;}
+.popnews-confirm .popnews-confirm-f .confirm-ok{background-color: #5cb85c; border: 1px solid #5cb85c;color: #fff;margin-right: 10px;}
+.popnews-confirm .popnews-confirm-f .confirm-no{background-color: #DDDDDD;border:1px solid #DDDDDD;color: #272822;}

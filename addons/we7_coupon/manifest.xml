@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="0.52,0.6">
+	<application setting="true"  cloud_setting="true" >
+		<name><![CDATA[系统卡券]]></name>
+		<identifie><![CDATA[we7_coupon]]></identifie>
+		<version><![CDATA[3.8]]></version>
+		<type><![CDATA[business]]></type>
+		<ability><![CDATA[微信卡券]]></ability>
+		<description><![CDATA[微信卡券]]></description>
+		<author><![CDATA[蓝梦社区]]></author>
+		<url><![CDATA[]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+		<supports>
+			<item type="app" />
+		</supports>
+	</platform>
+	<bindings>
+		<cover>
+			<entry title="会员卡入口设置" do="card" state="" direct="" />
+			<entry title="收银台入口设置" do="clerk" state="" direct="" />
+		</cover>
+		<menu>
+			<entry title="会员卡设置" do="membercard" state="" direct="" />
+			<entry title="会员卡管理" do="cardmanage" state="" direct="" />
+			<entry title="会员属性" do="memberproperty" state="" direct="" />
+			<entry title="优惠券管理" do="couponmanage" state="" direct="" />
+			<entry title="优惠券核销" do="couponconsume" state="" direct="" />
+			<entry title="优惠券派发" do="couponmarket" state="" direct="" />
+			<entry title="兑换优惠券" do="couponexchange" state="" direct="" />
+			<entry title="兑换真实物品" do="goodsexchange" state="" direct="" />
+			<entry title="门店管理" do="storelist" state="" direct="" />
+			<entry title="店员管理" do="clerklist" state="" direct="" />
+			<entry title="门店收银台" do="paycenter" state="" direct="" />
+			<entry title="工作台菜单设置" do="clerkdeskmenu" state="" direct="" />
+			<entry title="签到管理" do="signmanage" state="" direct="" />
+			<entry title="通知管理" do="noticemanage" state="" direct="" />
+			<entry title="会员积分统计" do="statcredit1" state="" direct="" />
+			<entry title="会员余额统计" do="statcredit2" state="" direct="" />
+			<entry title="会员现金消费统计" do="statcash" state="" direct="" />
+			<entry title="会员卡统计" do="statcard" state="" direct="" />
+			<entry title="收银台收款统计" do="statpaycenter" state="" direct="" />
+			<entry title="微信卡券回复" do="wxcardreply" state="" direct="" />
+		</menu>
+		<profile>
+			<entry title="" do="" state="" direct="" />
+			<entry title="会员卡" do="card" state="" direct="" />
+			<entry title="兑换商城" do="activity" state="" direct="" />
+		</profile>
+	</bindings>
+	<permissions>
+	</permissions>
+	<install><![CDATA[install.php]]></install>
+	<uninstall><![CDATA[]]></uninstall>
+	<upgrade><![CDATA[upgrade.php]]></upgrade>
+</manifest>

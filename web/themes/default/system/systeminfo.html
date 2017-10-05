@@ -1,0 +1,69 @@
+{template 'common/header'}
+<div class="we7-page-title">系统信息</div>
+<ul class="we7-page-tab"></ul>
+<div class="main">
+		
+	<table  style="display:none;" class="table we7-table table-hover site-list">
+		<col widtd="120px" />
+		<col widtd="120px" />
+		<tr>
+			<th colspan="2" class="text-left">用户信息</th>
+		</tr>
+		<tr>
+			<td class="text-left">用户ID</td>
+			<td class="text-left">{$info['uid']}</td>
+		</tr>
+		<tr>
+			<td class="text-left">当前公众号</td>
+			<td class="text-left">{$info['account']}</td>
+		</tr>
+	</table>
+	
+	<table class="table we7-table table-hover site-list">
+		<tr>
+			<th colspan="2" class="text-left">系统信息</th>
+		</tr>
+		<tr>
+			<td class="text-left">框架版本</td>
+			<td class="text-left">WeEngine 商业版&nbsp; &nbsp;
+				
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="text-left">服务器系统</td>
+			<td class="text-left">{$info['os']}</td>
+		</tr>
+		<tr>
+			<td class="text-left">PHP版本 </td>
+			<td class="text-left">PHP Version {$info['php']}</td>
+		</tr>
+		<tr>
+			<td class="text-left">服务器软件</td>
+			<td class="text-left">{$info['sapi']}</td>
+		</tr>
+		<tr>
+			<td class="text-left">服务器 MySQL 版本</td>
+			<td class="text-left">{$info['mysql']['version']}</td>
+		</tr>
+		<tr>
+			<td class="text-left">上传许可</td>
+			<td class="text-left">{$info['limit']}</td>
+		</tr>
+		<tr>
+			<td class="text-left">当前数据库尺寸</td>
+			<td class="text-left">{$info['mysql']['size']}</td>
+		</tr>
+		<tr>
+			<td class="text-left">当前附件根目录</td>
+			<td class="text-left">{$info['attach']['url']}</td>
+		</tr>
+		<tr>
+			<td class="text-left">当前附件尺寸</td>
+			<td class="text-left">{$info['attach']['size']}</td>
+		</tr>
+	</table>
+
+	
+</div>
+{template 'common/footer'}
